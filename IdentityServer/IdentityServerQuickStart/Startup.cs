@@ -28,7 +28,9 @@ namespace IdentityServerQuickStart
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddIdentityServer()
-                .AddDeveloperSigningCredential();
+                .AddDeveloperSigningCredential()
+                .AddInMemoryApiResources(Config.GetApiResources())
+                .AddInMemoryClients(Config.GetClients());
         }
     }
 }
