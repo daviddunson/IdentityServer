@@ -12,3 +12,7 @@ http://docs.identityserver.io/en/release/quickstarts/1_client_credentials.html
 ## Protecting an API using Passwords
 
 http://docs.identityserver.io/en/release/quickstarts/2_resource_owner_passwords.html
+
+## WPF application authentication with Google
+
+https://stackoverflow.com/questions/48321034/wpf-application-authentication-with-google
