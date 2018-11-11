@@ -30,9 +30,13 @@ namespace ClientQuickStart
                 return;
             }
 
-            // request token
-            var tokenClient = new TokenClient(disco.TokenEndpoint, "client", "secret");
-            var tokenResponse = await tokenClient.RequestClientCredentialsAsync("api1");
+            // request token (client credentials)
+            ////var tokenClient = new TokenClient(disco.TokenEndpoint, "client", "secret");
+            ////var tokenResponse = await tokenClient.RequestClientCredentialsAsync("api1");
+
+            // requequest token (resource owner password credentials)
+            var tokenClient = new TokenClient(disco.TokenEndpoint, "ro.client", "secret");
+            var tokenResponse = await tokenClient.RequestResourceOwnerPasswordAsync("alice", "password", "api1");
 
             if (tokenResponse.IsError)
             {
