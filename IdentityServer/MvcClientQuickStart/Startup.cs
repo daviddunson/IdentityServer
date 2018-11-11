@@ -4,8 +4,9 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace IdentityServerQuickStart
+namespace MvcClientQuickStart
 {
+    using System.IdentityModel.Tokens.Jwt;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.Extensions.DependencyInjection;
@@ -20,9 +21,12 @@ namespace IdentityServerQuickStart
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseIdentityServer();
+            app.UseAuthentication();
+
             app.UseStaticFiles();
-            app.UseMvcWithDefaultRoute();
+            app.UseMvc();
+
+            ////app.Run(async context => { await context.Response.WriteAsync("Hello World!"); });
         }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -31,12 +35,24 @@ namespace IdentityServerQuickStart
         {
             services.AddMvc();
 
-            services.AddIdentityServer()
-                .AddDeveloperSigningCredential()
-                .AddInMemoryApiResources(Config.GetApiResources())
-                .AddInMemoryIdentityResources(Config.GetIdentityResources())
-                .AddInMemoryClients(Config.GetClients())
-                .AddTestUsers(Config.GetUsers());
+            JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
+
+            services.AddAuthentication(options =>
+                {
+                    options.DefaultScheme = "Cookies";
+                    options.DefaultChallengeScheme = "oidc";
+                })
+                .AddCookie("Cookies")
+                .AddOpenIdConnect("oidc", options =>
+                {
+                    options.SignInScheme = "Cookies";
+
+                    options.Authority = "http://localhost:5000";
+                    options.RequireHttpsMetadata = false;
+
+                    options.ClientId = "mvc";
+                    options.SaveTokens = true;
+                });
         }
     }
 }
