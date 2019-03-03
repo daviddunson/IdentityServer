@@ -17,3 +17,7 @@ http://docs.identityserver.io/en/release/quickstarts/2_resource_owner_passwords.
 
 http://docs.identityserver.io/en/release/quickstarts/3_interactive_login.html
 https://github.com/IdentityServer/IdentityServer4.Quickstart.UI/tree/release
+
+## WPF application authentication with Google
+
+https://stackoverflow.com/questions/48321034/wpf-application-authentication-with-google
