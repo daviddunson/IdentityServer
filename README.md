@@ -19,7 +19,12 @@ http://docs.identityserver.io/en/latest/quickstarts/3_interactive_login.html
 https://github.com/IdentityServer/IdentityServer4.Quickstart.UI/tree/master
 
 ## Adding Support for External Authentication
+
 http://docs.identityserver.io/en/latest/quickstarts/4_external_authentication.html
+
+## Switching to Hybrid Flow and adding API Access back
+
+http://docs.identityserver.io/en/latest/quickstarts/5_hybrid_and_api_access.html
 
 # Explicit
 
