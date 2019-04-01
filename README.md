@@ -26,12 +26,20 @@ http://docs.identityserver.io/en/latest/quickstarts/4_external_authentication.ht
 
 http://docs.identityserver.io/en/latest/quickstarts/5_hybrid_and_api_access.html
 
-# Explicit
+## Using ASP.NET Core Identity
+
+http://docs.identityserver.io/en/latest/quickstarts/8_aspnet_identity.html
+
+To install the IdentityServer 4 dotnet templates:
+
+```
+dotnet new -i identityserver4.templates
+```
 
 ## WPF application authentication with Google
 
 https://stackoverflow.com/questions/48321034/wpf-application-authentication-with-google
 
-# Additional Information
+# Additional Resources
 
-- https://github.com/IdentityModel/IdentityModel.OidcClient.Samples
+https://github.com/IdentityModel/IdentityModel.OidcClient.Samples
