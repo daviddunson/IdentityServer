@@ -31,3 +31,7 @@ http://docs.identityserver.io/en/latest/quickstarts/5_hybrid_and_api_access.html
 ## WPF application authentication with Google
 
 https://stackoverflow.com/questions/48321034/wpf-application-authentication-with-google
+
+# Additional Information
+
+- https://github.com/IdentityModel/IdentityModel.OidcClient.Samples
